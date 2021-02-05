@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Trabalho de Conclusão de Curso da Graduação">
+    <meta name="author" content="Marcelo Machado Pereira">
+
+    <title>UVFriendly</title>
+    <link rel="icon" href="{% static 'website/favicon.ico' %}"
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'website/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'website/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{% static 'website/vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'website/css/creative.min.css' %}" rel="stylesheet">
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="far fa-sun"></i>&nbsp;UV FRIENDLY</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Projeto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Componentes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#technology">Tecnologias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'accounts:register' %}">Cadastro</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class=""> <!-- text-uppercase -->
+              <strong>Plataforma Web amigável para gestão de projetos de IoT</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">UV Friendly é uma plataforma Web especialista e amigável para a gestão de projetos de IoT que visam coletar dados sobre a incidência de raios UV.</p>
+            {% if user.is_authenticated %}
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="{% url 'sistema:index'%}">Entrar</a>
+            {% else %}
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="{% url 'accounts:login'%}">Entrar</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+          <div class="col-lg-4 col-sm-6">
+            <img class="img-fluid" src="{% static 'website/img/portfolio/thumbnails/perfil.jpg' %}" alt="">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category col-lg-8 mx-auto text-center">
+                  <br>Graduando
+                </div>
+                <div class="project-name col-lg-8 mx-auto text-center">
+                  Ciência da Computação
+                </div>
+                <div class="project-name col-lg-8 mx-auto text-center">
+                  Desenvolvedor Django
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-8">
+            <!--<img class="img-fluid" src="{% static 'img/portfolio/thumbnails/2.jpg' %}" alt="">-->
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  <h2 class="section-heading text-white">Qual é o objetivo deste trabalho?</h2>
+                  <!--<hr class="light my-4">-->
+                  <p class="text-justify mb-4">A radiação ultravioleta é a mais energética entre as emitidas pelo sol e portanto, apresenta mais perigos para várias formas de vida da superfície da Terra. O principal fator de risco para o desenvolvimento do câncer de pele é a exposição à radiação solar excessiva e desprotegida, que provoca alterações celulares na pele. Este trabalho propoe coletar dados através de um dispositivo e transferir os dados para um SmartPhone que irá salvar essas informações neste site.</p>
+                </div>
+                <div class="project-name">
+                  Conectividade entre o Hardware e o App Mobile e a plataforma do Website.
+                </div>
+                <div class="col-lg-10 ml-auto text-center">
+                  <br>
+                  <i class="fas fa-magic fa-2x mb-3 ">&nbsp;&nbsp;&nbsp;</i>
+                  <i class="fas fa-exchange-alt fa-2x mb-3 ">&nbsp;&nbsp;&nbsp;</i>
+                  <i class="fas fa-mobile-alt fa-2x mb-3 ">&nbsp;&nbsp;&nbsp;</i>
+                  <i class="fas fa-exchange-alt fa-2x mb-3 ">&nbsp;&nbsp;&nbsp;</i>
+                  <i class="fas fa-desktop fa-2x mb-3 "></i>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Como funciona o Projeto?</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-sm-center mx-3">
+          {% for pro in projetos %}
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="{{ pro.classe }}"></i>
+              <h3 class="mb-3">{{ pro.nome }}</h3>
+              <p class="text-muted mb-0">{{ pro.descricao }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="p-0" id="portfolio">
+      <div class="container-fluid p-0">
+        <div class="row justify-content-sm-center mx-3 no-gutters popup-gallery">
+          {% for comp in componentes %}
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="{% static '' %}{{ comp.fullsize }}">
+              <img class="img-fluid" src="{% static '' %}{{ comp.thumbnails }}" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    {{ comp.descricao }}
+                  </div>
+                  <div class="project-name">
+                    {{ comp.nome }}
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="p-0 bg-dark text-white" id="technology">
+      <div class="container text-center">
+        <h2 class="mb-4">Tecnologias empregadas no Projeto de IoT</h2>
+        {% for tech in tecnologias %}
+          <i class="{{ tech.classe }}" alt="{{ tech.alt }}">  {{ tech.nome }}</i><br>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Deseja obter mais informações?</h2>
+            <hr class="my-4">
+            <p class="mb-5">Você quer mais informações sobre este projeto? Ligue para nós ou envie-nos um e-mail e entraremos em contato o mais breve possível!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 ml-auto text-center">
+            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+            <p>+55 14 9 8815-3403</p>
+            <p>+55 14 3238-2314</p>
+          </div>
+          <div class="col-lg-3 mr-auto text-center">
+            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+            <p>
+              <a href="mailto:lobo.death@gmail.com">lobo.death@gmail.com</a>
+            </p>
+          </div>
+          <div class="col-lg-3 mr-auto text-center">
+            <i class="fas fa-globe-americas fa-3x mb-3 sr-contact-2"></i>
+            <p>
+              <a href="http://www.uvfriendly.com.br">www.uvfriendly.com.br</a>
+            </p>
+          </div>
+          <div class="col-lg-3 mr-auto text-center">
+            <i class="fas fa-donate fa-3x mb-3 sr-contact-2"></i>
+            <p>Banco: 237-Bradesco</p>
+            <p>C/C: 0016918-8</p>
+            <p>Ag: 2695</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky Footer -->
+    <footer class="sticky-footer">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright © UV Friendly 2018</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'website/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'website/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'website/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'website/vendor/scrollreveal/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'website/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'website/js/creative.min.js' %}"></script>
+  </body>
+</html>

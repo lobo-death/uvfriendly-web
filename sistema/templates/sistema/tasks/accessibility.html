@@ -1,0 +1,16 @@
+        {% extends 'sistema/base.html' %}
+        <!-- template main of accessibility -->
+        {% block content %}
+                <li class="breadcrumb-item">Tarefas</li>
+            </ol>
+            <!-- Page Content -->
+            <h1>Acessibilidade aos Dados</h1>
+            <hr>
+            <p>
+                <form method="post" enctype="multipart/form-data" action="{% url 'sistema:read_files' %}">
+                    {% csrf_token %}
+                    <input type="file" name="myfile" accept=".csv" value="media/" required="required"><br><br>
+                    <button class="btn btn-primary js-scroll-trigger" type="submit">Carregar Arquivo</button>
+                </form>
+            </p>
+        {% endblock %}

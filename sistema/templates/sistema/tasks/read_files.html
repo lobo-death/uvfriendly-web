@@ -1,0 +1,15 @@
+        {% extends 'sistema/base.html' %}
+        <!-- template of read_files -->
+        {% block content %}
+                <li class="breadcrumb-item">Tarefas</li>
+            </ol>
+            <!-- Page Content -->
+            <h1>Lê o arquivo pelo Pandas</h1>
+            <hr>
+            <p>
+                <a class="btn btn-primary js-scroll-trigger" href="{% url 'sistema:accessibility' %}"><i class="fas fa-undo-alt"></i></a>
+            </p>
+            {% autoescape off %}
+                {{ df }}
+            {% endautoescape %}
+        {% endblock %}

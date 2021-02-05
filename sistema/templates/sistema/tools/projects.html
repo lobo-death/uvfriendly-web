@@ -1,0 +1,32 @@
+        {% extends 'sistema/base.html' %}
+        <!-- template main of projects -->
+        {% block content %}
+                <li class="breadcrumb-item">Configurações</li>
+            </ol>
+            <!-- Page Content -->
+            <div class="card-header mb-3">
+                <a class="btn btn-primary js-scroll-trigger" href="{% url 'crud:form_projs' %}">
+                    <i class="fas fa-plus"></i>
+                </a>&nbsp;&nbsp;Projetos
+            </div>
+            <div class="card card-box">
+                <table class="table-bordered">
+                    <tr align="center" bgcolor="#e8ebee">
+                        <td><strong>NOME</strong></td><td><strong>DESCRIÇÃO</strong></td><td><strong>CLASSE</strong></td><td><strong>STATUS</strong></td><td><strong>AÇÕES</strong></td>
+                    </tr>
+                    {% for proj in projetos %}
+                    <tr align="center">
+                        <td>{{ proj.nome }}</td>
+                        <td>{{ proj.descricao }}</td>
+                        <td>{{ proj.classe }}</td>
+                        <td>{{ proj.status }}</td>
+                        <td>
+                            <a class="btn js-scroll-trigger" href="{% url 'crud:form_projs' proj.id %}"><i class="fas fa-edit"></i></a>
+                            <a class="btn js-scroll-trigger" href="{% url 'crud:dele_projs' proj.id %}"><i class="fas fa-trash-alt"></i></a>
+                            <a class="btn js-scroll-trigger" href="{% url 'crud:view_projs' proj.id %}"><i class="fas fa-search"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endblock %}

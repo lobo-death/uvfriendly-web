@@ -1,0 +1,33 @@
+        {% extends 'sistema/base.html' %}
+        <!-- template main of components -->
+        {% block content %}
+                <li class="breadcrumb-item">Configurações</li>
+            </ol>
+            <!-- Page Content -->
+            <div class="card-header mb-3">
+                <a class="btn btn-primary js-scroll-trigger" href="{% url 'crud:form_comps' %}">
+                    <i class="fas fa-plus"></i>
+                </a>&nbsp;&nbsp;Componentes
+            </div>
+            <div class="card card-box">
+                <table class="table-bordered">
+                    <tr align="center" bgcolor="#e8ebee">
+                        <td><strong>NOME</strong></td><td><strong>DESCRIÇÃO</strong></td><td><strong>FULLSIZE</strong></td><td><strong>THUMBNAILS</strong></td><td><strong>STATUS</strong></td><td><strong>AÇÕES</strong></td>
+                    </tr>
+                    {% for comp in componentes %}
+                    <tr align="center">
+                        <td>{{ comp.nome }}</td>
+                        <td>{{ comp.descricao }}</td>
+                        <td>{{ comp.fullsize }}</td>
+                        <td>{{ comp.thumbnails }}</td>
+                        <td>{{ comp.status }}</td>
+                        <td>
+                            <a class="btn js-scroll-trigger" href="{% url 'crud:form_comps' comp.id %}"><i class="fas fa-edit"></i></a>
+                            <a class="btn js-scroll-trigger" href="{% url 'crud:dele_comps' comp.id %}"><i class="fas fa-trash-alt"></i></a>
+                            <a class="btn js-scroll-trigger" href="{% url 'crud:view_comps' comp.id %}"><i class="fas fa-search"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endblock %}

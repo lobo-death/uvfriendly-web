@@ -1,0 +1,13 @@
+        {% extends 'sistema/base.html' %}
+        <!-- template main of acquisition -->
+        {% block content %}
+                <li class="breadcrumb-item">Tarefas</li>
+            </ol>
+            <!-- Page Content -->
+            <h1>Aquisição de Dados</h1>
+            <hr>
+            <p>
+                <div class="card-header mb-3"><a class="btn btn-primary js-scroll-trigger" href="{% url 'sistema:file_upload' %}"><i class="fas fa-file-upload"></i></a>&nbsp;&nbsp;Upload de Arquivos para o Sistema de Arquivos</div>
+                <div class="card-header mb-3"><a class="btn btn-primary js-scroll-trigger" href="{% url 'sistema:data_upload' %}"><i class="fas fa-database"></i></a>&nbsp;&nbsp;Upload de Arquivos para o Banco de Dados</div>
+            </p>
+        {% endblock %}

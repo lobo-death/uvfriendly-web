@@ -1,0 +1,25 @@
+        {% extends 'sistema/base.html' %}
+        <!-- template main of channels -->
+        {% block content %}
+                <li class="breadcrumb-item">Canais</li>
+            </ol>
+            <!-- Page Content -->
+            <div class="card-header mb-3">
+                <a class="btn btn-primary js-scroll-trigger" href="{% url 'crud:form_comps' %}">
+                    <i class="fas fa-plus"></i>
+                </a>&nbsp;&nbsp;Meus Canais
+            </div>
+            <div class="card card-box">
+                <table class="table-bordered">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% if usuarios.id == canais.nome_id %}
+                            <a class="btn btn-primary btn-block" href="{% url 'sistema:index' %}">Você já é Cadastrado</a>
+                        {% else %}
+                            <h3>Você não possui Canais</h3>
+                        {% endif %}
+                    </form>
+                </table>
+            </div>
+        {% endblock %}
+

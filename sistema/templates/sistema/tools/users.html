@@ -1,0 +1,36 @@
+        {% extends 'sistema/base.html' %}
+        <!-- template main of users -->
+        {% block content %}
+                <li class="breadcrumb-item">Configurações</li>
+            </ol>
+            <!-- Page Content -->
+            <div class="card-header mb-3">
+                <a class="btn btn-primary js-scroll-trigger" href="{% url 'crud:form_users' %}">
+                    <i class="fas fa-plus"></i>
+                </a>&nbsp;&nbsp;Usuários
+            </div>
+            <div class="card card-box">
+                <table class="table-bordered">
+                    <tr align="center" bgcolor="#e8ebee">
+                        <td><strong>CPF</strong></td><td><strong>NOME</strong></td><td><strong>SOBRENOME</strong></td><td><strong>EMAIL</strong></td><td><strong>SENHA1</strong></td><td><strong>SENHA2</strong></td><td><strong>STATUS</strong></td><td><strong>LEVEL</strong></td><td><strong>AÇÕES</strong></td>
+                    </tr>
+                    {% for user in usuarios %}
+                    <tr align="center">
+                        <td>{{ user.cpf }}</td>
+                        <td>{{ user.nome }}</td>
+                        <td>{{ user.sobrenome }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.senha1 }}</td>
+                        <td>{{ user.senha2 }}</td>
+                        <td>{{ user.status }}</td>
+                        <td>{{ user.level }}</td>
+                        <td>
+                            <a class="btn js-scroll-trigger" href="{% url 'crud:form_users' user.id %}"><i class="fas fa-edit"></i></a>
+                            <a class="btn js-scroll-trigger" href="{% url 'crud:dele_users' user.id %}"><i class="fas fa-trash-alt"></i></a>
+                            <a class="btn js-scroll-trigger" href="{% url 'crud:view_users' user.id %}"><i class="fas fa-search"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endblock %}

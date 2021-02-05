@@ -1,0 +1,20 @@
+        {% extends 'sistema/base.html' %}
+        <!-- template of file_upload -->
+        {% block content %}
+                <li class="breadcrumb-item">Tarefas</li>
+            </ol>
+            <!-- Page Content -->
+            <h1>Upload de Arquivos para o Sistema de Arquivos</h1>
+            <hr>
+            <p>
+                <a class="btn btn-primary js-scroll-trigger" href="{% url 'sistema:acquisition' %}"><i class="fas fa-undo-alt"></i></a>
+            </p>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="myfile" accept=".csv" required="required"><br><br>
+                <button class="btn btn-primary js-scroll-trigger" type="submit">Upload</button>
+            </form>
+            {% if uploaded_file_url %}
+                <br><p>Arquivo enviado para: {{ uploaded_file_url }}</p>
+            {% endif %}
+        {% endblock %}

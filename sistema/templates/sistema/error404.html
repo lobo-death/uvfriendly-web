@@ -1,0 +1,13 @@
+        {% extends 'sistema/base.html' %}
+
+        {% block content %}
+            <li class="breadcrumb-item active">404 Error</li>
+          </ol>
+
+          <!-- Page Content -->
+          <h1 class="display-1">404</h1>
+          <p class="lead">Página não encontrada. Você pode
+            <a href="javascript:history.back()">voltar </a>
+            para a página anterior ou voltar para
+            <a href="{% url 'sistema:index' %}">página principal</a>.</p>
+        {% endblock %}

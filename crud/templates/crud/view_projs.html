@@ -1,0 +1,22 @@
+        {% extends 'sistema/base.html' %}
+        <!-- form to view details of projects -->
+        {% block content %}
+                <li class="breadcrumb-item active">Configurações</li>
+            </ol>
+            <div class="card-header">
+                <a class="btn btn-primary js-scroll-trigger" href="{% url 'sistema:projects' %}">
+                    <i class="fas fa-undo-alt"></i>
+                </a>&nbsp;&nbsp;Projetos
+            </div>
+            <div class="container">
+                <div class="row justify-content-sm-center mx-3">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box mt-5 mx-auto">
+                            <i class="{{ projetos.classe }}"></i>
+                            <h3 class="mb-3">{{ projetos.nome }}</h3>
+                            <p class="text-muted mb-0">{{ projetos.descricao }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
